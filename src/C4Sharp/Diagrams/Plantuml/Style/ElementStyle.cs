@@ -31,8 +31,8 @@ public class ElementStyle : IElementStyle
             borderColor is not null ? $"$borderColor={borderColor}" : null,
             $"$shadowing=\"{shadowing.ToString().ToLower()}\"",
             shape is not null ? $"$shape={shape.Value}" : null,
-            borderStyle is not null ? $"$borderStyle={borderStyle.Value.Value}" : null,
-            borderThickness is not null ? $"$borderThickness={borderThickness}" : null
+            borderStyle is not null ? $"$borderStyle={borderStyle?.Name ?? BorderStyle.SolidLine.Name}" : null,
+            borderThickness is not null ? $"$borderThickness=\"{borderThickness}\"" : null
         ];
         
         var styleString = string.Join(",", styles.Where(x => x is not null));
