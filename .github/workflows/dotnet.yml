@@ -7,8 +7,8 @@ on:
     branches: [ main ]
     
 env:
-  VERSION: 8.0.${{ github.run_number }}
-  CLI_VERSION: 4.0.${{ github.run_number }}
+  VERSION: 8.1.${{ github.run_number }}
+  CLI_VERSION: 4.1.${{ github.run_number }}
   NUGET_INDEX: https://api.nuget.org/v3/index.json
   BUILD_TYPE: Release 
 
@@ -34,7 +34,12 @@ jobs:
     - name: Setup .NET Core 9.0.x
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 9.0.x        
+        dotnet-version: 9.0.x   
+        
+    - name: Setup .NET Core 10.0.x
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 10.0.x
     
     - name: Restore dependencies
       run: dotnet restore
