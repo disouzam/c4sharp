@@ -1,6 +1,6 @@
 namespace C4Sharp.Diagrams.Plantuml.Constants;
 
-public readonly record struct BorderStyle(string Value)
+public readonly record struct BorderStyle(string Name)
 {
     /// <summary>
     /// This call returns the name of the dashed line and can be used as ?lineStyle argument.
